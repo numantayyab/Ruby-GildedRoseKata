@@ -1,3 +1,11 @@
+=begin
+ --The following class will be refactored in steps. 
+  -We will first split each conditional into small functions
+  - Each function then will be converted into classes / helper actions for the sake of clarity
+  - test cases will be added to ensure maximum coverage of the code
+  - If time allowed, a MAKE file will be added with instructions on how to setup the project / run tests
+=end
+
 class GildedRose
 
   def initialize(items)
