@@ -4,14 +4,14 @@ describe GildedRose do
 
   describe "#update_quality" do
     it "does not change the name" do
-      items = [Item.new("foo", 0, 0)]
+      items = [ItemImplementation.new("foo", 0, 0)]
       GildedRose.new(items).update_quality()
       expect(items[0].name).to eq "foo"
     end
   end
 
   describe "#normal items" do
-    elixir = Item.new("Elixir of the Mongoose", 5, 15)
+    elixir = ItemImplementation.new("Elixir of the Mongoose", 5, 15)
     gilded_rose = GildedRose.new([elixir])
     it "should deacrease quantity sequentially" do
       gilded_rose.update_quality
@@ -37,7 +37,7 @@ describe GildedRose do
 
 
   describe "#Backstage Passes" do
-    backstage_pass = Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=12, quality=20)
+    backstage_pass = ItemImplementation.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=12, quality=20)
     gilded_rose = GildedRose.new([backstage_pass])
     it "should increase quantity by 1" do
       1.times{gilded_rose.update_quality}
@@ -65,7 +65,7 @@ describe GildedRose do
 
 
   describe "#Aged Brie" do
-    aged_brie = Item.new(name="Aged Brie", sell_in=10, quality=10)
+    aged_brie = ItemImplementation.new(name="Aged Brie", sell_in=10, quality=10)
     gilded_rose = GildedRose.new([aged_brie])
     it "should increase quantity by 1" do
       6.times{gilded_rose.update_quality}
@@ -86,7 +86,7 @@ describe GildedRose do
   end
 
   describe "#Sulfuras, Hand of Ragnaros" do
-    sulfuras = Item.new(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=80)
+    sulfuras = ItemImplementation.new(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=80)
     gilded_rose = GildedRose.new([sulfuras])
     it "should not change quantity when sellIn decreases" do
       1.times{gilded_rose.update_quality}
