@@ -1,6 +1,30 @@
-README.md
+## Refactored KATA
 
-======================================
+I spent roughly around 2 hours refactoring this Kata. First 1 hour was spent understanding code and writing tests from the requirements. Tests were confirmed with given fixtures. 
+Following was the planned breakdown of changes
+- Write specs so refactoring can be verified
+- split each conditional into small function
+- Convert functions into classe methods / helper actions for the sake of clarity
+- Fix Conjure items
+
+A few items were missed due to the time shortage but can be improved
+- Test coverage for Conjure items
+- further split of methods into separate classes
+- Refactor of tests for the ease of readability
+
+## How to use
+
+Please clone the project and run tests by running:
+`rspec gilded_rose_spec.rb`
+
+Fixtures can be run by executing
+`ruby ./texttest_fixture.rb`
+
+
+The original requirements were as under:
+
+
+
 Gilded Rose Requirements Specification
 ======================================
 
