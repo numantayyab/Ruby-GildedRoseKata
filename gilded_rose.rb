@@ -56,14 +56,14 @@ class ItemImplementation < Item
   def normal_item_calculation
     decrease_by = -1
     decrease_by = -2 if self.sell_in <= 0
-    self.amend_quality_by_number(decrease_by)
+    amend_quality_by_number(decrease_by)
     set_min_quality
   end
 
   def backstage_pass_calculation
-    self.amend_quality_by_number
-    self.amend_quality_by_number if sell_in <= 5
-    self.amend_quality_by_number if sell_in <= 10
+    amend_quality_by_number
+    amend_quality_by_number if sell_in <= 5
+    amend_quality_by_number if sell_in <= 10
     set_min_quality(true)
     set_max_quality
   end
@@ -71,11 +71,10 @@ class ItemImplementation < Item
   def aged_brie_calculation
     increase_by = 1
     increase_by = 2 if self.sell_in <= 0
-    self.amend_quality_by_number(increase_by)
+    amend_quality_by_number(increase_by)
     set_max_quality
   end
-  
-  
+
   private
   def amend_quality_by_number(num=1)
     self.quality += num
